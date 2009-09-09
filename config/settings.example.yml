@@ -1,0 +1,13 @@
+defaults: &defaults
+  :database:
+    :adapter: sqlite3
+    :database: db/barrage.db
+
+:development:
+  <<: *defaults
+  
+:test:
+  <<: *defaults
+  :database:
+    :adapter: sqlite3
+    :database: db/barrage_test.db
