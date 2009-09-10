@@ -15,6 +15,10 @@ class InputMap
     @errors = {}
   end
   
+  def validate_input
+    
+  end
+  
   def before_save
     true
   end
@@ -25,8 +29,19 @@ class InputMap
   
   def save( data = {} )
     @data = data
-    if before_save
+    
+    validate_input
+    if @errors.empty? and before_save
       return do_save
     end
+    return false
+  end
+  
+  def set_error( field, message )
+    @errors[field] = message
+  end
+  
+  def errors
+    @errors
   end
 end
