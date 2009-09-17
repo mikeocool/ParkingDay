@@ -28,7 +28,11 @@ module ParkingDay
       def tag(name, contents = nil, attrs = {}, &block)
         attrs, contents = contents, nil if contents.is_a?(Hash)
         contents = capture(&block) if block_given?
-        open_tag(name, attrs) + contents.to_s + close_tag(name)
+        if(contents != '')
+          return open_tag(name, attrs) + contents.to_s + close_tag(name)
+        else
+          return self_closing_tag(name, attrs)
+        end
       end
     
       # Creates the opening tag with attributes for the provided +name+

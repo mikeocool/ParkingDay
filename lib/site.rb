@@ -1,3 +1,5 @@
+require 'fileutils'
+
 module ParkingDay
   class Site
     include DataMapper::Resource
@@ -16,16 +18,39 @@ module ParkingDay
                                       }
     property :name,           String, :nullable => false
     property :location,       String
-    property :favorite_color, String, :default => 'ffffff', :nullable => false
+    property :favorite_color, String, :default => 'FFFFFF', :nullable => false
     property :question,       String
     property :fact_one,       String
     property :fact_two,       String
     property :fact_three,     String
-    property :link_title,           String
+    property :link_title,     String
     property :link_url,       String
     property :template_id,    Integer, :nullable => false
     property :year,           Integer, :default => 2009, :nullable => false
     property :created_at,     DateTime
     property :updated_at,     DateTime
+    
+    after :save, :save_photo
+    
+    def photo=(file)
+      @photo = file
+    end
+    
+    def photo
+      photo_path
+    end
+    
+    private
+    
+    def save_photo
+      return if !@photo
+      FileUtils.mv(@photo[:tempfile].path, File.dirname(__FILE__)+'/../public'+photo_path)
+      @photo = nil
+    end
+    
+    def photo_path
+      "/photos/#{self.id}.jpg"
+    end
+    
   end
 end
