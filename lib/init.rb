@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra/base'
 require 'dm-core'
+require 'dm-validations'
 
 RACK_ENV = ENV["RACK_ENV"] ||= "development" unless defined? RACK_ENV
 

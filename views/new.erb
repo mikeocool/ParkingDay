@@ -15,22 +15,22 @@
 	<% form_for(@site, {:action => '/sites/new', :multipart => true}) do %>
 		<div class="input">
 			<label>URL:</label>
-			http://www.tbgparkingday.com/<%= text_field :name => "slug" %>
+			http://www.tbgparkingday.com/<%= text_field :slug %>
 		</div>
 		
 		<div class="input">
 			<label>Site Title:</label>
-			<%= text_field :name => "title" %>
+			<%= text_field :title %>
 		</div>
 		
 		<div class="input">
 			<label>First Name:</label>
-			<%= text_field :name => "first_name" %>
+			<%= text_field :first_name %>
 		</div>
 		
 		<div class="input">
 			<label>Last Name:</label>
-			<%= text_field :name => "last_name" %>
+			<%= text_field :last_name %>
 		</div>
 
 	<% end %>
