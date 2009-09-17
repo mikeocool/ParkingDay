@@ -12,8 +12,27 @@
 <body>
 	<h1>Make a website</h1>
 	
-	<% form({}) do %>
-		form stuff
+	<% form_for(@site, {:action => '/sites/new', :multipart => true}) do %>
+		<div class="input">
+			<label>URL:</label>
+			http://www.tbgparkingday.com/<%= text_field :name => "slug" %>
+		</div>
+		
+		<div class="input">
+			<label>Site Title:</label>
+			<%= text_field :name => "title" %>
+		</div>
+		
+		<div class="input">
+			<label>First Name:</label>
+			<%= text_field :name => "first_name" %>
+		</div>
+		
+		<div class="input">
+			<label>Last Name:</label>
+			<%= text_field :name => "last_name" %>
+		</div>
+
 	<% end %>
 
 </body>

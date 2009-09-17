@@ -1,6 +1,26 @@
 module ParkingDay
   module Helpers
     module Form
+      
+      def capture(*args, &block)
+        ret = nil
+          
+        captured = send("capture_erb", *args) do |*args|
+          ret = yield *args
+        end
+       
+        # return captured value only if it is not empty
+        captured.empty? ? ret.to_s : captured
+      end
+      
+      def capture_erb(*args, &block)
+        _old_buf, @_out_buf = @_out_buf, ""
+        block.call(*args)
+        ret = @_out_buf
+        @_out_buf = _old_buf
+        ret
+      end
+      
       def _singleton_form_context
         self._default_builder = ParkingDay::Helpers::Form::Builder::ResourcefulFormWithErrors unless self._default_builder
         @_singleton_form_context ||= self._default_builder.new(nil, nil, self)
@@ -89,9 +109,11 @@ module ParkingDay
       #     <input type="submit" value="Create" />
       #   </form>
       def form_for(name, attrs = {}, &blk)
-        with_form_context(name, attrs.delete(:builder)) do
+        
+        ret = with_form_context(name, attrs.delete(:builder)) do
           current_form_context.form(attrs, &blk)
         end
+        @_out_buf << ret
       end
 
       # Creates a scope around a specific resource object like form_for, but doesnt create the form tags themselves.

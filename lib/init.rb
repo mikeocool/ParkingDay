@@ -4,6 +4,8 @@ require 'dm-core'
 
 RACK_ENV = ENV["RACK_ENV"] ||= "development" unless defined? RACK_ENV
 
+require File.dirname(__FILE__)+'/erubis'
+
 require File.dirname(__FILE__)+'/utils'
 require File.dirname(__FILE__)+'/site'
 

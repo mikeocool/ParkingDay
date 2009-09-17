@@ -9,6 +9,7 @@ module ParkingDay
     end
     
     get '/sites/new' do
+      @site = Site.new({:slug => 'blah'})
       erb :new
     end
   

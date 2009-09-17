@@ -14,10 +14,9 @@ module ParkingDay
           end
 
           def form(attrs = {}, &blk)
-            #captured = @origin.capture(&blk)
+            captured = @origin.capture(&blk)
             fake_method_tag = process_form_attrs(attrs)
-            #tag(:form, fake_method_tag + captured, attrs)
-            tag(:form, fake_method_tag, attrs)
+            tag(:form, fake_method_tag + captured, attrs)
           end
 
           def fieldset(attrs, &blk)
