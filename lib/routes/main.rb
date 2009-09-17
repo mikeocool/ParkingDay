@@ -20,7 +20,7 @@ module ParkingDay
   
     post '/admin/new' do
       require_administrative_privileges
-      @site = Site.new( params['parking_day::site'] )
+      @site = Site.new( params['site'] )
       if @site.save
         sweep_cache('index')
         redirect '/admin/#{@site.id}/sticker'
@@ -62,7 +62,7 @@ module ParkingDay
         return erb(:'404')
       end
       
-      if @site.update_attributes(params['parking_day::site'])
+      if @site.update_attributes(params['site'])
         sweep_cache(@site.slug)
         sweep_cache('index')
         redirect '/admin'
