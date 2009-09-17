@@ -17,7 +17,7 @@ module Caching
   
   def sweep_cache(path)
     path += '.html'
-    FileUtils.rm(File.join(cache_path), path)
+    FileUtils.rm(File.join(cache_path, path), :force => true)
   end
   
   def cache_path

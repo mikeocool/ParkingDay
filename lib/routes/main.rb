@@ -32,7 +32,7 @@ module ParkingDay
     get '/admin/:id' do
       require_administrative_privileges
       
-      @site = Site.get( params[:id] )
+      @site = Site.get( params['id'] )
       if !@site
         status 404
         return erb(:'404')
@@ -41,22 +41,10 @@ module ParkingDay
       erb(:'admin/edit', :layout => :'admin/layout')
     end
     
-    get '/admin/:id/sticker' do
-      require_administrative_privileges
-      
-      @site = Site.get( params[:id] )
-      if !@site
-        status 404
-        return erb(:'404')
-      end
-      
-      erb(:'admin/sticker', :layout => false)
-    end
-    
     post '/admin/:id' do
       require_administrative_privileges
       
-      @site = Site.get( params[:id] )
+      @site = Site.get( params['id'] )
       if !@site
         status 404
         return erb(:'404')
@@ -69,6 +57,18 @@ module ParkingDay
       else
         erb(:'admin/edit', :layout => :'admin/layout')
       end
+    end
+    
+    get '/admin/:id/sticker' do
+      require_administrative_privileges
+      
+      @site = Site.get( params[:id] )
+      if !@site
+        status 404
+        return erb(:'404')
+      end
+      
+      erb(:'admin/sticker', :layout => false)
     end
     
     delete '/admin/:id' do
