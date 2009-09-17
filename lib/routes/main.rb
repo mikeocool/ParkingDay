@@ -4,6 +4,7 @@ module ParkingDay
   class ParkingDayApp
   
     get '/' do
+      @sites = Site.all
       erb :index
     end
   
