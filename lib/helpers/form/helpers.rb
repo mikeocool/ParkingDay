@@ -77,7 +77,7 @@ module ParkingDay
       #     <input type="submit" value="Create" />
       #   </form>
       def form(*args, &blk)
-        _singleton_form_context.form(*args, &blk)
+        @_out_buf << _singleton_form_context.form(*args, &blk)
       end
 
       # Generates a resource specific form tag which accepts a block, this also provides automatic resource routing.
@@ -110,10 +110,9 @@ module ParkingDay
       #   </form>
       def form_for(name, attrs = {}, &blk)
         
-        ret = with_form_context(name, attrs.delete(:builder)) do
+        @_out_buf << with_form_context(name, attrs.delete(:builder)) do
           current_form_context.form(attrs, &blk)
         end
-        @_out_buf << ret
       end
 
       # Creates a scope around a specific resource object like form_for, but doesnt create the form tags themselves.
@@ -130,7 +129,7 @@ module ParkingDay
       #   <% end =%>
       def fields_for(name, attrs = {}, &blk)
         attrs ||= {}
-        with_form_context(name, attrs.delete(:builder)) do
+        @_out_buf << with_form_context(name, attrs.delete(:builder)) do
           capture(&blk)
         end
       end
@@ -161,11 +160,11 @@ module ParkingDay
       #     ...your form elements
       #   </fieldset>
       def fieldset(attrs = {}, &blk)
-        _singleton_form_context.fieldset(attrs, &blk)
+        @_out_buf << _singleton_form_context.fieldset(attrs, &blk)
       end
 
       def fieldset_for(name, attrs = {}, &blk)
-        with_form_context(name, attrs.delete(:builder)) do
+        @_out_buf << with_form_context(name, attrs.delete(:builder)) do
           current_form_context.fieldset(attrs, &blk)
         end
       end
