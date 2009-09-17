@@ -5,9 +5,9 @@ require 'dm-validations'
 
 RACK_ENV = ENV["RACK_ENV"] ||= "development" unless defined? RACK_ENV
 
-require File.dirname(__FILE__)+'/erubis'
-
 require File.dirname(__FILE__)+'/utils'
+require File.dirname(__FILE__)+'/erubis'
+require File.dirname(__FILE__)+'/caching'
 require File.dirname(__FILE__)+'/site'
 
 #load all helpers
@@ -30,6 +30,8 @@ module ParkingDay
     enable :logging, :static, :dump_errors
     set :app_file, __FILE__
     set :root, File.dirname(__FILE__)+'/../'
+    
+    include Caching
     
     #TO FIX - this is just for the form helper temporairily
     class_inheritable_accessor :_default_builder

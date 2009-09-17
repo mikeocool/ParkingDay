@@ -1,4 +1,5 @@
 defaults: &defaults
+  :cache: true
   :admin:
     :user: admin
     :password: password

@@ -3,7 +3,7 @@ module ParkingDay
   
     get '/' do
       @sites = Site.all
-      erb :index
+      cache erb :index
     end
     
     get '/admin' do
@@ -22,6 +22,7 @@ module ParkingDay
       require_administrative_privileges
       @site = Site.new( params['parking_day::site'] )
       if @site.save
+        sweep_cache('index')
         erb :'admin/sticker'
       else
         erb :'admin/new', :layout => :'admin/layout'
@@ -50,6 +51,8 @@ module ParkingDay
       end
       
       if @site.update_attributes(params['parking_day::site'])
+        sweep_cache(@site.slug)
+        sweep_cache('index')
         redirect '/admin'
       else
         erb(:'admin/edit', :layout => :'admin/layout')
@@ -64,9 +67,9 @@ module ParkingDay
         status 404
         return erb(:'404')
       end
-      
+      sweep_cache(@site.slug)
+      sweep_cache('index')
       @site.destroy
-      
     end
     
     get '/:slug' do
@@ -76,8 +79,7 @@ module ParkingDay
         return erb(:'404')
       end
       
-      #TODO: caching
-      erb :"templates/#{@site.template_id}"
+      cache erb :"templates/#{@site.template_id}"
     end
     
   end
