@@ -30,14 +30,43 @@ module ParkingDay
     
     get '/admin/:id' do
       require_administrative_privileges
+      
+      @site = Site.get( params[:id] )
+      if !@site
+        status 404
+        return erb(:'404')
+      end
+      
+      erb(:'admin/edit')
     end
     
     post '/admin/:id' do
       require_administrative_privileges
+      
+      @site = Site.get( params[:id] )
+      if !@site
+        status 404
+        return erb(:'404')
+      end
+      
+      if @site.update_attributes(params['parking_day::site'])
+        redirect '/admin/index'
+      else
+        erb(:'admin/edit')
+      end
     end
     
     delete '/admin/:id' do
       require_administrative_privileges
+      
+      @site = Site.get( params[:id] )
+      if !@site
+        status 404
+        return erb(:'404')
+      end
+      
+      @site.destroy
+      
     end
     
     get '/:slug' do
@@ -47,8 +76,8 @@ module ParkingDay
         return erb(:'404')
       end
       
+      #TODO: caching
       erb :"templates/#{@site.template_id}"
-      
     end
     
   end
