@@ -21,6 +21,18 @@ module ParkingDay
         erb :new
       end
     end
-  
+    
+    get '/:slug' do
+      @site = Site.first( :slug => params[:slug] )
+      if !@site
+        status 404
+        erb :'404'
+        return
+      end
+      
+      
+      
+    end
+    
   end
 end
