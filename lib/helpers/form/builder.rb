@@ -1,4 +1,4 @@
-File.dirname(__FILE__) / ".." / "tag.rb"
+require File.dirname(__FILE__) / ".." / "tag.rb"
 
 module ParkingDay
   module Helpers
