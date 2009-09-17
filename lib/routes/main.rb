@@ -37,7 +37,7 @@ module ParkingDay
         return erb(:'404')
       end
       
-      erb(:'admin/edit')
+      erb(:'admin/edit', :layout => :'admin/layout')
     end
     
     post '/admin/:id' do
@@ -52,7 +52,7 @@ module ParkingDay
       if @site.update_attributes(params['parking_day::site'])
         redirect '/admin'
       else
-        erb(:'admin/edit')
+        erb(:'admin/edit', :layout => :'admin/layout')
       end
     end
     

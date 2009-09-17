@@ -20,7 +20,7 @@ var jscolor = {
 
 
 	install : function() {
-		jscolor.addEvent(window, 'load', jscolor.init)
+		jscolor.addEvent(window, 'load', jscolor.init);
 	},
 
 

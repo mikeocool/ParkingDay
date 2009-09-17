@@ -16,7 +16,7 @@ module ParkingDay
                                       }
     property :name,           String, :nullable => false
     property :location,       String
-    property :favorite_color, String, :default => '#fff', :nullable => false
+    property :favorite_color, String, :default => 'ffffff', :nullable => false
     property :question,       String
     property :fact_one,       String
     property :fact_two,       String
