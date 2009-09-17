@@ -410,6 +410,8 @@ module ParkingDay
       #   <%= delete_button @article, "Delete article now", :class => 'delete-btn' %>
       #   <%= delete_button url(:article, @article)%>
       #
+      
+      # TO FIX
       def delete_button(object_or_url, contents="Delete", attrs = {})
         url = object_or_url.is_a?(String) ? object_or_url : resource(object_or_url)
         button_text = (contents || 'Delete')

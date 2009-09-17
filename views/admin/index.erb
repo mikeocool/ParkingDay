@@ -7,7 +7,7 @@
 			
 			<a href="/<%= site.slug %>">View</a>
 			<a href="/admin/<%= site.id %>">Edit</a>
-			<a href="">Delete</a>
+			<%= delete_button("/admin/#{site.id}") %>
 		</li>
 	<% end %>
 </ul>

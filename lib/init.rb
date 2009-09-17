@@ -34,8 +34,14 @@ module ParkingDay
     #TO FIX - this is just for the form helper temporairily
     class_inheritable_accessor :_default_builder
     
-    #TODO figure out how to auto include these based on file loading?
-    helpers Helpers::Base, Helpers::Form, Helpers::HttpAuth
+    #dynamically load helpers
+    ParkingDay::Helpers.constants().each { |const|
+      mod = ParkingDay::Helpers.const_get(const)
+      if mod.is_a?(Module)
+        helpers mod
+      end
+    }
+    
   end
 end
 
