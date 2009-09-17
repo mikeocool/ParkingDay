@@ -9,13 +9,13 @@ module ParkingDay
     get '/admin' do
       require_administrative_privileges
       @sites = Site.all
-      erb :'admin/index'
+      erb :'admin/index', :layout => :'admin/layout'
     end
     
     get '/admin/new' do
       require_administrative_privileges
       @site = Site.new()
-      erb :new
+      erb :'admin/new', :layout => :'admin/layout'
     end
   
     post '/admin/new' do
@@ -24,7 +24,7 @@ module ParkingDay
       if @site.save
         erb 'admin/:sticker'
       else
-        erb :new
+        erb :'admin/new', :layout => :'admin/layout'
       end
     end
     

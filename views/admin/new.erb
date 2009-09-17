@@ -1,0 +1,6 @@
+<h1>Make a website</h1>
+
+<% form_for(@site, {:action => '/admin/new', :multipart => true}) do %>
+	<%= partial(:'admin/_form') %>
+<% end %>
+
