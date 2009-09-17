@@ -62,6 +62,8 @@ module ParkingDay
 
           def bound_radio_button(method, attrs = {})
             name = control_name(method)
+            val = control_value(method)
+            attrs[:checked] = true if (val == attrs[:value])
             update_bound_controls(method, attrs, "radio")
             unbound_radio_button({:name => name, :value => control_value(method)}.merge(attrs))
           end

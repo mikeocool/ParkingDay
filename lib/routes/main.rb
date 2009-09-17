@@ -50,7 +50,7 @@ module ParkingDay
       end
       
       if @site.update_attributes(params['parking_day::site'])
-        redirect '/admin/index'
+        redirect '/admin'
       else
         erb(:'admin/edit')
       end
