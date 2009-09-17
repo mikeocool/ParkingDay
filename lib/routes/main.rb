@@ -8,12 +8,20 @@ module ParkingDay
       erb :index
     end
     
-    get '/sites/new' do
-      @site = Site.new({:slug => 'blah'})
+    get '/admin' do
+      require_administrative_privileges
+      @sites = Site.all
+      erb :'admin/index'
+    end
+    
+    get '/admin/new' do
+      require_administrative_privileges
+      @site = Site.new()
       erb :new
     end
   
-    post '/sites/new' do
+    post '/admin/new' do
+      require_administrative_privileges
       input_map = SiteCreateMap.new
       if site = input_map.save( request.params )
         redirect "/#{site.slug}"
@@ -22,12 +30,23 @@ module ParkingDay
       end
     end
     
+    get '/admin/:id' do
+      require_administrative_privileges
+    end
+    
+    post '/admin/:id' do
+      require_administrative_privileges
+    end
+    
+    delete '/admin/:id' do
+      require_administrative_privileges
+    end
+    
     get '/:slug' do
       @site = Site.first( :slug => params[:slug] )
       if !@site
         status 404
-        erb :'404'
-        return
+        return erb(:'404')
       end
       
       

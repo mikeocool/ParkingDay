@@ -1,7 +1,10 @@
 defaults: &defaults
+  :admin:
+    :user: admin
+    :password: password
   :database:
     :adapter: sqlite3
-    :database: db/barrage.db
+    :database: db/parkingday.db
 
 :development:
   <<: *defaults
@@ -10,4 +13,4 @@ defaults: &defaults
   <<: *defaults
   :database:
     :adapter: sqlite3
-    :database: db/barrage_test.db
+    :database: db/parkingday_test.db

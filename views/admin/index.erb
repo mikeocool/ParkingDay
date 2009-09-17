@@ -5,16 +5,16 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-	<title>TBG Park(ing) Day : Create</title>
+	<title>TBG Park(ing) Day Admin</title>
 	
 </head>
 
 <body>
-	<h1>Make a website</h1>
-	
-	<% form_for(@site, {:action => '/admin/new', :multipart => true}) do %>
-		<%= partial(:'_form') %>
-	<% end %>
-
+	<h1>TBG Park(ing) Day Websites</h1>
+	<ul>
+		<% @sites.each do |site| %>
+			<li><a href="/<%= site.slug %>"><%= site.title %></a></li>
+		<% end %>
+	</ul>
 </body>
 </html>

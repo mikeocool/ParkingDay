@@ -35,7 +35,7 @@ module ParkingDay
     class_inheritable_accessor :_default_builder
     
     #TODO figure out how to auto include these based on file loading?
-    helpers Helpers::Base, Helpers::Form
+    helpers Helpers::Base, Helpers::Form, Helpers::HttpAuth
   end
 end
 

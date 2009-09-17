@@ -5,16 +5,14 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-	<title>TBG Park(ing) Day : Create</title>
+	<title><%= @site.name  %> : TBG Park(ing) Day Site</title>
 	
 </head>
 
 <body>
-	<h1>Make a website</h1>
-	
-	<% form_for(@site, {:action => '/admin/new', :multipart => true}) do %>
-		<%= partial(:'_form') %>
-	<% end %>
+	<h1><%= @site.name %></h1>
+	<h2><%= @site.location %></h2>
 
+	<%= partial(:'shared/_analytics') %>
 </body>
 </html>
