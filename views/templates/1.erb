@@ -13,6 +13,16 @@
 	<h1><%= @site.name %></h1>
 	<h2><%= @site.location %></h2>
 
+	<h3>Question for the Internet</h3>
+	<p><%= @site.question %></p>
+	
+	<h3>Random Stuff</h3>
+	<ul>
+		<li><%= @site.fact_one %></li>
+		<li><%= @site.fact_two %></li>
+		<li><%= @site.fact_three %></li>
+	</ul>
+
 	<%= partial(:'shared/_analytics') %>
 </body>
 </html>
