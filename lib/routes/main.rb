@@ -47,7 +47,7 @@ module ParkingDay
         return erb(:'404')
       end
       
-      
+      erb :"templates/#{@site.template_id}"
       
     end
     
