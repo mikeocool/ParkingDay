@@ -29,7 +29,7 @@ module ParkingDay
     set :root, File.dirname(__FILE__)+'/../'
     
     #TODO figure out how to auto include these based on file loading?
-    helpers BaseHelper, FormHelper
+    helpers Helpers::Base, Helpers::Form
   end
 end
 
