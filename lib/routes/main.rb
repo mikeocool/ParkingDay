@@ -23,7 +23,7 @@ module ParkingDay
       @site = Site.new( params['parking_day::site'] )
       if @site.save
         sweep_cache('index')
-        erb :'admin/sticker'
+        redirect '/admin/#{@site.id}/sticker'
       else
         erb :'admin/new', :layout => :'admin/layout'
       end
@@ -39,6 +39,18 @@ module ParkingDay
       end
       
       erb(:'admin/edit', :layout => :'admin/layout')
+    end
+    
+    get '/admin/:id/sticker' do
+      require_administrative_privileges
+      
+      @site = Site.get( params[:id] )
+      if !@site
+        status 404
+        return erb(:'404')
+      end
+      
+      erb(:'admin/sticker', :layout => false)
     end
     
     post '/admin/:id' do
