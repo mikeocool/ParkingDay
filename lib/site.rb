@@ -21,6 +21,8 @@ module ParkingDay
     property :fact_one,       String
     property :fact_two,       String
     property :fact_three,     String
+    property :link_title,           String
+    property :link_url,       String
     property :template_id,    Integer, :nullable => false
     property :year,           Integer, :default => 2009, :nullable => false
     property :created_at,     DateTime
