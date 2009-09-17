@@ -3,7 +3,7 @@ module ParkingDay
   
     get '/' do
       @sites = Site.all
-      cache erb :index
+      cache erb(:index)
     end
     
     get '/admin' do
@@ -79,7 +79,7 @@ module ParkingDay
         return erb(:'404')
       end
       
-      cache erb :"templates/#{@site.template_id}"
+      cache erb(:"templates/#{@site.template_id}")
     end
     
   end
