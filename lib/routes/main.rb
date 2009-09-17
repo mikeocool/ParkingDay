@@ -1,5 +1,3 @@
-require File.dirname(__FILE__)+'/../site_create_map'
-
 module ParkingDay
   class ParkingDayApp
   
@@ -22,9 +20,9 @@ module ParkingDay
   
     post '/admin/new' do
       require_administrative_privileges
-      input_map = SiteCreateMap.new
-      if site = input_map.save( request.params )
-        redirect "/#{site.slug}"
+      @site = Site.new( params['parking_day::site'] )
+      if @site.save
+        erb 'admin/:sticker'
       else
         erb :new
       end

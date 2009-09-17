@@ -406,14 +406,16 @@ module ParkingDay
             obj ||= @obj
             return "" unless obj.respond_to?(:errors)
 
-            sequel = !obj.errors.respond_to?(:each)
-            errors = sequel ? obj.errors.full_messages : obj.errors
+            #sequel = !obj.errors.respond_to?(:each)
+            #errors = sequel ? obj.errors.full_messages : obj.errors
+            errors = obj.errors
 
             return "" if errors.empty?
 
             header_message = header % [errors.size, errors.size == 1 ? "" : "s"]
             markup = %Q{<div class='#{error_class}'>#{header_message}<ul>}
-            errors.each {|err| markup << (build_li % (sequel ? err : err.join(" ")))}
+            #errors.each {|err| markup << (build_li % (sequel ? err : err.join(" ")))}
+            errors.each {|err| markup << (build_li % err.join(" "))}
             markup << %Q{</ul></div>}
           end
 
