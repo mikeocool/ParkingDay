@@ -22,7 +22,7 @@ module ParkingDay
       require_administrative_privileges
       @site = Site.new( params['parking_day::site'] )
       if @site.save
-        erb 'admin/:sticker'
+        erb :'admin/sticker'
       else
         erb :'admin/new', :layout => :'admin/layout'
       end

@@ -10,3 +10,7 @@ def settings(key)
 
   $settings[key]
 end
+
+def escape_xml(s)
+  Erubis::XmlHelper.escape_xml(s)
+end

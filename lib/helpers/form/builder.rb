@@ -261,8 +261,8 @@ module ParkingDay
 
               #TO FIX
               #unless Merb.disabled?(:merb_helper_escaping)
-              #  text  = Merb::Parse.escape_xml(text)
-              #  value = Merb::Parse.escape_xml(value)
+                text  = escape_xml(text)
+                value = escape_xml(value)
               #end
 
               option_attrs = {:value => value}
@@ -292,9 +292,9 @@ module ParkingDay
             value = @obj ? @obj.send(method) : @origin.params[method]
             #TO FIX
             #if Merb.disabled?(:merb_helper_escaping)
-              value.to_s
+            #  value.to_s
             #else
-            #  Merb::Parse.escape_xml(value.to_s)
+              escape_xml(value.to_s)
             #end
           end
 
