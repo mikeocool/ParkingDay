@@ -28,6 +28,9 @@ module ParkingDay
     set :app_file, __FILE__
     set :root, File.dirname(__FILE__)+'/../'
     
+    #TO FIX - this is just for the form helper temporairily
+    class_inheritable_accessor :_default_builder
+    
     #TODO figure out how to auto include these based on file loading?
     helpers Helpers::Base, Helpers::Form
   end

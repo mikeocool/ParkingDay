@@ -2,9 +2,8 @@ module ParkingDay
   module Helpers
     module Form
       def _singleton_form_context
-        self._default_builder = Merb::Helpers::Form::Builder::ResourcefulFormWithErrors unless self._default_builder
-        @_singleton_form_context ||=
-          self._default_builder.new(nil, nil, self)
+        self._default_builder = ParkingDay::Helpers::Form::Builder::ResourcefulFormWithErrors unless self._default_builder
+        @_singleton_form_context ||= self._default_builder.new(nil, nil, self)
       end
 
       def form_contexts

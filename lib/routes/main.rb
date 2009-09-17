@@ -7,6 +7,10 @@ module ParkingDay
       @sites = Site.all
       erb :index
     end
+    
+    get '/sites/new' do
+      erb :new
+    end
   
     post '/sites/new' do
       input_map = SiteCreateMap.new
