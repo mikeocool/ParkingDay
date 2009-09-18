@@ -23,7 +23,7 @@ module ParkingDay
       @site = Site.new( params['site'] )
       if @site.save
         sweep_cache('index')
-        redirect '/admin/#{@site.id}/sticker'
+        redirect "/admin/#{@site.id}/sticker"
       else
         erb :'admin/new', :layout => :'admin/layout'
       end
