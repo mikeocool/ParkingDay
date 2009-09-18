@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title><%= @site.name  %> : TBG Park(ing) Day Site</title>
+	
+</head>
+
+<body>
+	<h1><%= @site.name %></h1>
+	<h2><%= @site.location %></h2>
+
+	<h3>Question for the Internet</h3>
+	<p><%= @site.question %></p>
+	
+	<h3>Random Stuff</h3>
+	<ul>
+		<li><%= @site.fact_one %></li>
+		<li><%= @site.fact_two %></li>
+		<li><%= @site.fact_three %></li>
+	</ul>
+	
+	<a href="<%= @site.link_url %>"><%= @site.link_title %></a>
+	
+	<% if @site.photo %>
+		<img src="<%= @site.photo %>" />
+	<% end %>
+	
+	<%= partial(:'shared/_analytics') %>
+</body>
+</html>

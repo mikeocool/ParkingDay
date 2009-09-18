@@ -1,34 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-	<title><%= @site.name  %> : TBG Park(ing) Day Site</title>
-	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title><%= @site.name  %> - TBG Parking Day</title>
+	<link rel="stylesheet" href="/css/irockny.css" type="text/css" media="screen" />
+	<!-- Date: 2009-09-18 -->
 </head>
-
 <body>
-	<h1><%= @site.name %></h1>
-	<h2><%= @site.location %></h2>
-
-	<h3>Question for the Internet</h3>
-	<p><%= @site.question %></p>
+	<div id="content">
+	<div class="leftsmall short i1"></div>
+	<div class="rightbig short i2">
+		<p class="title"><%= @site.name %><br /><%= @site.location %></p>
+	</div>
+	<div class="leftbig tall i3"></div>
+	<div class="rightsmall tall i4">
+		<% if @site.photo %>
+			<img class="photo" width="263" src="<%= @site.photo %>" />
+		<% end %>
+	</div>
+	<div class="leftbig short i5">
+		<ul>
+			<li><%= @site.fact_one %></li>
+			<li><%= @site.fact_two %></li>
+			<li><%= @site.fact_three %></li>
+		</ul>
+	</div>
+	<div class="rightsmall short i6"></div>
+	<div style="clear:both;"></div>
+	<div class="bottom short i7"></div>
+	<div class="footer">Site created for Park(ing) Day 2009 by</div>
+	</div>
 	
-	<h3>Random Stuff</h3>
-	<ul>
-		<li><%= @site.fact_one %></li>
-		<li><%= @site.fact_two %></li>
-		<li><%= @site.fact_three %></li>
-	</ul>
-	
-	<a href="<%= @site.link_url %>"><%= @site.link_title %></a>
-	
-	<% if @site.photo %>
-		<img src="<%= @site.photo %>" />
-	<% end %>
-	
-	<%= partial(:'shared/_analytics') %>
 </body>
 </html>
