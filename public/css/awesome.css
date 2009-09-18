@@ -1,0 +1,31 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-image: url(/images/awesome/bkrd.gif);
+	
+}
+
+#content {
+	margin-top: 20px;
+	width: 600px;   
+	height: 400px;      
+	margin: 0 auto;
+	text-align: center
+}
+
+p {
+	background-color: #164a81;
+	font-family: Helvetica, Arial;
+	color: #33FF00;
+	font-weight: bold;
+	font-size: 25px;
+	margin: 10px;
+}
+
+.alt {
+	color:#FF0000;
+	background-color:#FFFF00;
+	}
