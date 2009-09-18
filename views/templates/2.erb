@@ -35,9 +35,11 @@
     
     <div class="divbg"><div class="text">I got this website for free.<br /><img src="/images/livinlarge/clipart_magicbus.gif" /></div></div>
     <div class="text">Check out this cool things:<br />
-		<%= if(@site.link_url) %><a href="<%= @site.link_url  %>"><%= @site.link_title  %></a><% end %>
+		<% if(@site.link_url) %><a href="<%= @site.link_url  %>"><%= @site.link_title  %></a><% end %><br />
+		
     <img src="/images/livinlarge/tiger.gif" height="400px" width="400px" /><img src="/images/livinlarge/tiger.gif" height="400px" width="400px" />
-		<%= if(@site.photo) %><img src="<%= @site.photo %>" /><% end %>
+		<br />
+		<% if(@site.photo) %><img src="<%= @site.photo %>" /><% end %>
 	<br />
 	<span style="padding: 50px;"><img src="/images/livinlarge/biggrin4.gif"  /></span>
     <span style="padding: 50px;"><img src="/images/livinlarge/biggrin4.gif"  /></span>
