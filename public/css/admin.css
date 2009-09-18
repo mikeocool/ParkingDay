@@ -3,15 +3,22 @@ body {
 	font-size: 12px;
 }
 
+a:link,
+a:visited,
+a:active,
+a:hover {
+	color: #0CAD17;
+}
+
 #wrapper {
 	width: 800px;
 	margin: 0 auto;
 }
 
 .input {
- background-color: #ccc;
- margin-bottom: 3px;
-padding: 5px;
+	background-color: #ccc;
+	margin-bottom: 3px;
+	padding: 5px;
 }
 
 .input label {
@@ -23,6 +30,34 @@ padding: 5px;
 	width: 400px;
 }
 
-.input input#parking_day::site_slug {
-	
+.input input#site_slug {
+	width: 150px;
+}
+
+.input input#site_favorite_color {
+	width: 150px;
+}
+
+.input
+
+.sites {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sites li {
+	background-color: #ccc;
+	margin-bottom: 3px;
+	padding: 5px;
+	overflow: hidden;
+}
+
+.sites li .actions {
+	float: right;
+}
+
+.sites li .actions a, .sites li .actions form {
+	float: left;
+	padding-left: 5px;
 }

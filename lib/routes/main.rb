@@ -2,13 +2,13 @@ module ParkingDay
   class ParkingDayApp
   
     get '/' do
-      @sites = Site.all
+      @sites = Site.all(:order => [:created_at.desc]  )
       cache erb(:index)
     end
     
     get '/admin' do
       require_administrative_privileges
-      @sites = Site.all
+      @sites = Site.all( :order => [:created_at.desc] )
       erb :'admin/index', :layout => :'admin/layout'
     end
     

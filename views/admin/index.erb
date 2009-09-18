@@ -1,13 +1,15 @@
 <h1>TBG Park(ing) Day Websites</h1>
 <a href="/admin/new">Create A New Site</a>
-<ul>
+<ul class="sites">
 	<% @sites.each do |site| %>
 		<li>
 			<%= site.name %>
-			
-			<a href="/<%= site.slug %>">View</a>
-			<a href="/admin/<%= site.id %>">Edit</a>
-			<%= delete_button("/admin/#{site.id}") %>
+			<div class="actions">
+				<a href="/<%= site.slug %>">View</a>
+				<a href="/admin/<%= site.id %>">Edit</a>
+				<a href="/admin/<%= site.id %>/sticker">Sticker</a>
+				<%= delete_button("/admin/#{site.id}") %>
+			</div>
 		</li>
 	<% end %>
 </ul>
