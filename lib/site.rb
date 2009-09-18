@@ -20,11 +20,11 @@ module ParkingDay
     property :location,       String
     property :favorite_color, String, :default => 'FFFFFF', :nullable => false
     property :question,       String, :length => 255
-    property :fact_one,       String
+    property :fact_one,       String, :length => 255
     property :fact_two,       String, :length => 255
-    property :fact_three,     String
-    property :link_title,     String
-    property :link_url,       String
+    property :fact_three,     String, :length => 255
+    property :link_title,     String, :length => 255
+    property :link_url,       String, :length => 255
     property :template_id,    Integer, :nullable => false
     property :year,           Integer, :default => 2009, :nullable => false
     property :created_at,     DateTime
