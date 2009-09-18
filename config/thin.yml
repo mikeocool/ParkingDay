@@ -9,6 +9,6 @@ require: []
 
 environment: production
 max_persistent_conns: 512
-servers: 3
+servers: 5
 daemonize: true
 chdir: /home/tbgparkingdaycom/site
