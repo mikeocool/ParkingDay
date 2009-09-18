@@ -24,7 +24,11 @@
 	</ul>
 	
 	<a href="<%= @site.link_url %>"><%= @site.link_title %></a>
-
+	
+	<% if @site.photo %>
+		<img src="<%= @site.photo %>" />
+	<% end %>
+	
 	<%= partial(:'shared/_analytics') %>
 </body>
 </html>
