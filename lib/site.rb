@@ -19,9 +19,9 @@ module ParkingDay
     property :name,           String, :nullable => false
     property :location,       String
     property :favorite_color, String, :default => 'FFFFFF', :nullable => false
-    property :question,       String
+    property :question,       String, :length => 255
     property :fact_one,       String
-    property :fact_two,       String
+    property :fact_two,       String, :length => 255
     property :fact_three,     String
     property :link_title,     String
     property :link_url,       String
