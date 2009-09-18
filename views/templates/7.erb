@@ -30,5 +30,7 @@
     <div class="text">On top of this website, I also enjoy <%= @site.fact_one %>, <%= @site.fact_two %>, and <%= @site.fact_three %>.</div>
    <% if(@site.link_url) %><div class="text">Be sure to check out: <a href="<%= @site.link_url %>"><%= @site.link_title %></a></div><% end %>
 		<div style="text-align: center;"><% if(@site.photo) %><img src="<%= @site.photo %>" /><% end %></div>
+		
+		<%= partial(:'shared/_analytics') %>
 </body>
 </html>
