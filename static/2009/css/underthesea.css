@@ -1,0 +1,29 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-image: url(/images/underthesea/bkrd.jpg);
+	background-repeat: repeat-x;
+	background-color: #164a81;
+}
+
+#content {
+	width: 852px;         
+	margin: 0 auto;
+	text-align: center
+}
+
+p {
+	font-family: Comic Sans MS, "Brush Script MT," cursive;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.friend {
+	font-size: 14px;
+	float:left;
+	padding: 30px;
+}
