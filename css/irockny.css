@@ -1,0 +1,102 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-image: url(/images/irockny/bkrd.jpg);
+}
+
+#content {
+	width: 852px;
+	margin: 0 auto;
+}
+
+.leftsmall {
+float: left;
+	width: 317px;
+}
+
+.leftbig {
+float: left;
+	width: 537px;
+}
+
+.rightsmall {
+float: left;
+	width: 315px;
+}
+
+.rightbig {
+	float: left;
+	width: 535px;
+}
+
+.bottom {
+	width:850px;
+}
+
+.tall {
+	height: 370px;
+}
+
+.short {
+	height: 294px;
+}
+
+.i1 {
+	background-image: url(/images/irockny/1.png);
+	background-repeat: no-repeat;
+}
+
+.i2 {
+	background-image: url(/images/irockny/2.png);
+	background-repeat: no-repeat;
+}
+
+.i3 {
+	background-image: url(/images/irockny/3.png);
+	background-repeat: no-repeat;
+}
+
+.i4 {
+	background-image: url(/images/irockny/4.png);
+	background-repeat: no-repeat;
+}
+
+.i5 {
+	background-image: url(/images/irockny/5.png);
+	background-repeat: no-repeat;
+}
+
+.i6 {
+	background-image: url(/images/irockny/6.png);
+	background-repeat: no-repeat;
+}
+
+.i7 {
+	background-image: url(/images/irockny/7.png);
+	background-repeat: no-repeat;
+}
+
+.i2 .title {
+	font-size: 24px;
+	color: #cf0000;
+	font-family: Courier, "Courier New", monospace;
+	padding-left: 156px;
+	padding-top: 153px;
+	padding-right: 65px;
+}
+
+.i4 .photo {
+	width:263px;
+	padding-left: 26px;
+	padding-top: 112px;
+}
+
+.i5 ul {
+	font-size: 24px;
+	font-family: Courier, "Courier New", monospace;
+	padding-left: 99px;
+	padding-top: 80px;
+}
