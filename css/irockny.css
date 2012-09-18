@@ -4,7 +4,7 @@
 }
 
 body {
-	background-image: url(/images/irockny/bkrd.jpg);
+	background-image: url(../images/irockny/bkrd.jpg);
 }
 
 #content {
@@ -45,37 +45,37 @@ float: left;
 }
 
 .i1 {
-	background-image: url(/images/irockny/1.png);
+	background-image: url(images/irockny/1.png);
 	background-repeat: no-repeat;
 }
 
 .i2 {
-	background-image: url(/images/irockny/2.png);
+	background-image: url(images/irockny/2.png);
 	background-repeat: no-repeat;
 }
 
 .i3 {
-	background-image: url(/images/irockny/3.png);
+	background-image: url(images/irockny/3.png);
 	background-repeat: no-repeat;
 }
 
 .i4 {
-	background-image: url(/images/irockny/4.png);
+	background-image: url(images/irockny/4.png);
 	background-repeat: no-repeat;
 }
 
 .i5 {
-	background-image: url(/images/irockny/5.png);
+	background-image: url(images/irockny/5.png);
 	background-repeat: no-repeat;
 }
 
 .i6 {
-	background-image: url(/images/irockny/6.png);
+	background-image: url(images/irockny/6.png);
 	background-repeat: no-repeat;
 }
 
 .i7 {
-	background-image: url(/images/irockny/7.png);
+	background-image: url(images/irockny/7.png);
 	background-repeat: no-repeat;
 }
 

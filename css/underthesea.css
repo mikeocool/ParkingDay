@@ -4,7 +4,7 @@
 }
 
 body {
-	background-image: url(/images/underthesea/bkrd.jpg);
+	background-image: url(../images/underthesea/bkrd.jpg);
 	background-repeat: repeat-x;
 	background-color: #164a81;
 }
